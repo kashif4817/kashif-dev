@@ -17,14 +17,22 @@ export default function Contact() {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!form.name || !form.email || !form.message) return
     setStatus('sending')
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error()
       setStatus('sent')
       setForm({ name: '', email: '', message: '' })
-    }, 1200)
+    } catch {
+      setStatus('error')
+    }
   }
 
   const socials = [
@@ -122,12 +130,15 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === 'sending' || status === 'sent'}
+                onClick={status === 'error' ? () => setStatus(null) : undefined}
                 className="w-full py-3.5 rounded-xl bg-blue-500 text-white font-semibold text-sm hover:bg-blue-600 disabled:opacity-70 transition-all hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 flex items-center justify-center gap-2"
               >
                 {status === 'sending' ? (
                   <><span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />Sending...</>
                 ) : status === 'sent' ? (
                   <><svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Message Sent!</>
+                ) : status === 'error' ? (
+                  'Failed — Try Again'
                 ) : 'Send Message'}
               </button>
             </form>

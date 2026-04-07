@@ -10,7 +10,7 @@ const projects = [
     tech: ['Next.js', 'React', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'JWT'],
     link: 'https://farhan-ecommrace.vercel.app/',
     github: 'https://github.com/kashif4817/Farhan-Ecommrace',
-    image: '/ecommrace.png',
+    image: '/ecommrace.webp',
     category: 'fullstack',
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     tech: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'JWT'],
     link: 'https://farhan-admin-pannel.vercel.app/',
     github: 'https://github.com/kashif4817/farhan-admin-pannel',
-    image: '/admin.png',
+    image: '/admin.webp',
     category: 'fullstack',
   },
   {
@@ -42,7 +42,7 @@ const projects = [
     tech: ['HTML', 'Tailwind CSS', 'JavaScript'],
     link: 'https://pixel-next.netlify.app/',
     github: 'https://github.com/Rashid4817/CodeVault---Project-Showcase',
-    image: '/pixel.png',
+    image: '/pixel.webp',
     category: 'frontend',
   },
   {
@@ -52,7 +52,7 @@ const projects = [
     tech: ['HTML', 'Tailwind CSS', 'JavaScript'],
     link: 'https://powerfit-gym-mi.netlify.app/',
     github: 'https://github.com/Rashid4817/PowerFit-Gym---Transform-Your-Body-Mind',
-    image: '/powerfit.png',
+    image: '/powerfit.webp',
     category: 'frontend',
   },
   {
@@ -62,7 +62,7 @@ const projects = [
     tech: ['HTML', 'Tailwind CSS', 'JavaScript'],
     link: 'https://glamour-haven-luxury-beauty-salon-s.netlify.app/',
     github: 'https://github.com/Rashid4817/Glamour-Haven---Luxury-Beauty-Salon-Spa',
-    image: '/glamour.png',
+    image: '/glamour.webp',
     category: 'frontend',
   },
 ]
